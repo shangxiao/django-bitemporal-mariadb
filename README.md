@@ -43,6 +43,9 @@ with for_system_time(before):
 # uses FOR SYSTEM_TIME ALL -> Hong Kong, New York
 with for_sytem_time("all"):
     queryset.values("address")
+
+# using a custom queryset:
+Company.objects.system_time(before, after)
 ```
 
 Notes
