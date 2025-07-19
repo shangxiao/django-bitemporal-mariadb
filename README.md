@@ -13,14 +13,12 @@ class Company(Model):
     address = CharField(max_length=255)
 
     class Meta:
+        # Enables system versioning with either:
+        #  - CREATE TABLE company (...) WITH SYSTEM VERSIONING
+        # - ALTER TABLE company ADD SYSTEM VERSIONING
+        # - `ALTER TABLE company DROP SYSTEM VERSIONING
         system_versioned = True
 ```
-
-enables:
-
- - `CREATE TABLE company (...) WITH SYSTEM VERSIONING`
- - `ALTER TABLE company ADD SYSTEM VERSIONING`
- - `ALTER TABLE company DROP SYSTEM VERSIONING`
 
 Querying system versioning:
 
