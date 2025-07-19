@@ -5,7 +5,7 @@ Bitemporal Django with MariaDB
 System Versioning
 -----------------
 
-Model definition to enable `SYSTEM_VERSIONED`:
+Model definition to enable `SYSTEM VERSIONING`:
 
 ```python
 class Company(Model):
@@ -15,6 +15,12 @@ class Company(Model):
     class Meta:
         system_versioned = True
 ```
+
+enables:
+
+ - `CREATE TABLE company (...) WITH SYSTEM VERSIONING`
+ - `ALTER TABLE company ADD SYSTEM VERSIONING`
+ - `ALTER TABLE company DROP SYSTEM VERSIONING`
 
 Querying system versioning:
 
